@@ -1,0 +1,272 @@
+/* Estilo global */
+html, body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Botões principais */
+.btn-custom {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 12px;
+  min-width: 120px;
+}
+
+.btn-curriculo {
+  background-color: #f7b500;
+  color: #000;
+}
+
+.btn-projetos {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+.btn-contato {
+  background-color: #67d2dd;
+  color: #000;
+}
+
+/* Rodapé com animação */
+.footer-full {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+.footer-full.show {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Link do footer */
+.footer-toggle {
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #555;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.footer-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Ícone do LinkedIn */
+.linkedin-icon {
+  font-size: 1.3rem;
+  color: #0a66c2;
+}
+
+/* Padding interno nos blocos do footer */
+footer .container > div {
+  padding: 12px 0;
+}
+
+/* Estilo exclusivo da página de contato */
+/* Página de contato centralizada */
+body.contato-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  transition: opacity 0.5s ease;
+}
+
+body.contato-page {
+  opacity: 0;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  transition: opacity 0.5s ease;
+}
+
+body.contato-page.loaded {
+  opacity: 1;
+}
+
+body.contato-page.fade-out {
+  opacity: 0;
+}
+
+.form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+}
+
+.btn-home {
+  margin-top: 1rem;
+}
+
+/* === Página SOBRE === */
+
+body.sobre-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+  padding: 2rem 1rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.sobre-page.loaded {
+  opacity: 1;
+}
+
+.curriculo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.curriculo-container h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.curriculo-container h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.curriculo-container ul {
+  padding-left: 1rem;
+}
+
+.curriculo-container ul li {
+  margin-bottom: 0.5rem;
+}
+
+.section-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.section-item .left {
+  flex: 0 0 30%;
+  color: #555;
+  font-weight: 500;
+}
+
+.section-item .right {
+  flex: 0 0 65%;
+}
+
+.btns {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.btns a {
+  margin: 0.5rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-item {
+    flex-direction: column;
+  }
+
+  .section-item .left,
+  .section-item .right {
+    flex: 0 0 100%;
+  }
+
+  .curriculo-container h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Projetos */
+
+.projetos-page {
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+}
+
+.projeto {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3rem;
+}
+
+.imagem-principal {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.imagem-principal:hover {
+  border-color: #0d6efd;
+}
+
+.miniatura {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.miniatura:hover {
+  transform: scale(1.05);
+  border-color: #0d6efd;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
